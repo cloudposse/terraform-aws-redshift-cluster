@@ -122,7 +122,7 @@ variable "elastic_ip" {
 
 variable "skip_final_snapshot" {
   type        = bool
-  default     = false
+  default     = true
   description = "Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster."
 }
 

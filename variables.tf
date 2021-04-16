@@ -7,7 +7,7 @@ variable "cluster_identifier" {
 variable "database_name" {
   type        = string
   default     = "dev"
-  description = "The name of the first database to be created when the cluster is created."
+  description = "The name of the first database to be created when the cluster is created"
 }
 
 variable "admin_user" {
@@ -31,7 +31,7 @@ variable "node_type" {
 variable "cluster_type" {
   type        = string
   default     = "single-node"
-  description = "The cluster type to use. Either `single-node` or `multi-node`."
+  description = "The cluster type to use. Either `single-node` or `multi-node`"
 }
 
 variable "subnet_ids" {
@@ -81,30 +81,30 @@ variable "port" {
 variable "engine_version" {
   type        = string
   default     = "1.0"
-  description = "The version of the Amazon Redshift engine to use."
+  description = "The version of the Amazon Redshift engine to use"
 }
 
 variable "nodes" {
   type        = number
   default     = 1
-  description = "The number of compute nodes in the cluster. This parameter is required when the ClusterType parameter is specified as multi-node."
+  description = "The number of compute nodes in the cluster. This parameter is required when the ClusterType parameter is specified as multi-node"
 }
 
 variable "publicly_accessible" {
   type        = bool
   default     = true
-  description = "If true, the cluster can be accessed from a public network."
+  description = "If true, the cluster can be accessed from a public network"
 }
 
 variable "encrypted" {
   type        = bool
-  description = "Specifies whether the cluster is encrypted at rest."
+  description = "Specifies whether the cluster is encrypted at rest"
   default     = false
 }
 
 variable "enhanced_vpc_routing" {
   type        = bool
-  description = "If true , enhanced VPC routing is enabled."
+  description = "If true , enhanced VPC routing is enabled"
   default     = false
 }
 
@@ -123,7 +123,7 @@ variable "elastic_ip" {
 variable "skip_final_snapshot" {
   type        = bool
   default     = true
-  description = "Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster."
+  description = "Determines whether a final snapshot of the cluster is created before Amazon Redshift deletes the cluster"
 }
 
 variable "final_snapshot_identifier" {
@@ -135,19 +135,19 @@ variable "final_snapshot_identifier" {
 variable "snapshot_identifier" {
   type        = string
   default     = null
-  description = "The name of the snapshot from which to create the new cluster."
+  description = "The name of the snapshot from which to create the new cluster"
 }
 
 variable "snapshot_cluster_identifier" {
   type        = string
   default     = null
-  description = "The name of the cluster the source snapshot was created from."
+  description = "The name of the cluster the source snapshot was created from"
 }
 
 variable "owner_account" {
   type        = string
   default     = null
-  description = "The AWS customer account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot."
+  description = "The AWS customer account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own the snapshot"
 }
 
 variable "iam_roles" {
@@ -165,7 +165,7 @@ variable "logging" {
 variable "logging_bucket_name" {
   type        = string
   default     = null
-  description = "The name of an existing S3 bucket where the log files are to be stored. Must be in the same region as the cluster and the cluster must have read bucket and put object permissions."
+  description = "The name of an existing S3 bucket where the log files are to be stored. Must be in the same region as the cluster and the cluster must have read bucket and put object permissions"
 }
 
 variable "logging_s3_key_prefix" {

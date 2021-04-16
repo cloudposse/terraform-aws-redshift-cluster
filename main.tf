@@ -27,7 +27,7 @@ resource "aws_redshift_cluster" "default" {
   snapshot_identifier                 = var.snapshot_identifier
   snapshot_cluster_identifier         = var.snapshot_cluster_identifier
   owner_account                       = var.owner_account
-  iam_roles                           = []
+  iam_roles                           = var.iam_roles
 
   depends_on = [
     aws_redshift_subnet_group.default,

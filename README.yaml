@@ -5,7 +5,7 @@
 #
 
 # Name of this project
-name: terraform-example-module
+name: terraform-aws-redshift-cluster
 
 # Logo for this project
 #logo: docs/logo.png
@@ -20,13 +20,13 @@ copyrights:
     year: "2020"
 
 # Canonical GitHub repo
-github_repo: cloudposse/terraform-example-module
+github_repo: cloudposse/terraform-aws-redshift-cluster
 
 # Badges to display
 badges:
   - name: "Latest Release"
-    image: "https://img.shields.io/github/release/cloudposse/terraform-example-module.svg"
-    url: "https://github.com/cloudposse/terraform-example-module/releases/latest"
+    image: "https://img.shields.io/github/release/cloudposse/terraform-aws-redshift-cluster.svg"
+    url: "https://github.com/cloudposse/terraform-aws-redshift-cluster/releases/latest"
   - name: "Slack Community"
     image: "https://slack.cloudposse.com/badge.svg"
     url: "https://slack.cloudposse.com"
@@ -72,16 +72,19 @@ usage: |-
   (which tests and deploys the example on AWS), see [test](test).
 
   ```hcl
-  module "example" {
-    source = "https://github.com/cloudposse/terraform-example-module.git?ref=master"
-    example = "Hello world!"
+  module "redshift_cluster" {
+    source  = "cloudposse/redshift-cluster/aws"
+    # Cloud Posse recommends pinning every module to a specific version
+    # version = "x.x.x"
+    
+    # ...
   }
   ```
 
 # Example usage
 examples: |-
   Here is an example of using this module:
-  - [`examples/complete`](https://github.com/cloudposse/terraform-example-module/) - complete example of using this module
+  - [`examples/complete`](https://github.com/cloudposse/terraform-aws-redshift-cluster/) - complete example of using this module
 
 # How to get started quickly
 #quickstart: |-
@@ -96,3 +99,5 @@ include:
 contributors:
   - name: "Erik Osterman"
     github: "osterman"
+  - name: "RB"
+    github: "nitrocode"

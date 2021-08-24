@@ -52,6 +52,7 @@ resource "aws_redshift_subnet_group" "default" {
 }
 
 resource "aws_redshift_parameter_group" "default" {
+  count  = module.this.enabled ? 1 : 0
   name   = module.this.id
   family = "redshift-1.0"
 
@@ -62,4 +63,6 @@ resource "aws_redshift_parameter_group" "default" {
       value = parameter.value.value
     }
   }
+
+  tags = module.this.tags
 }

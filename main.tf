@@ -28,7 +28,8 @@ resource "aws_redshift_cluster" "default" {
   snapshot_cluster_identifier         = var.snapshot_cluster_identifier
   owner_account                       = var.owner_account
   iam_roles                           = var.iam_roles
-
+  allow_version_upgrade               = var.allow_version_upgrade
+    
   depends_on = [
     aws_redshift_subnet_group.default,
     aws_redshift_parameter_group.default

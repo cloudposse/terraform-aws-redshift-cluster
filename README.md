@@ -1,4 +1,4 @@
-
+        
 <!-- markdownlint-disable -->
 # terraform-aws-redshift-cluster [![Latest Release](https://img.shields.io/github/release/cloudposse/terraform-aws-redshift-cluster.svg)](https://github.com/cloudposse/terraform-aws-redshift-cluster/releases/latest) [![Slack Community](https://slack.cloudposse.com/badge.svg)](https://slack.cloudposse.com) [![Discourse Forum](https://img.shields.io/discourse/https/ask.sweetops.com/posts.svg)](https://ask.sweetops.com/)
 <!-- markdownlint-restore -->

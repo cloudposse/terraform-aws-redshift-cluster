@@ -180,3 +180,8 @@ variable "default_security_group" {
   description = "Specifies whether or not to create default security group for The Amazon Redshift cluster"
 }
 
+variable "allow_version_upgrade" {
+  type        = bool
+  default     = true
+  description = "Whether or not to enable major version upgrades which are applied during the maintenance window to the Amazon Redshift engine that is running on the cluster."
+}

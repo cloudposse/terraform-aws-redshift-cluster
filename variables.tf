@@ -51,6 +51,12 @@ variable "availability_zone" {
   description = "Optional parameter to place Amazon Redshift cluster instances in a specific availability zone. If left empty, will place randomly"
 }
 
+variable "availability_zone_relocation_enabled" {
+  type        = bool
+  default     = false
+  description = "If true, the cluster can be relocated to another availabity zone, either automatically by AWS or when requested"
+}
+
 variable "preferred_maintenance_window" {
   type        = string
   default     = null

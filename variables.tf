@@ -54,7 +54,7 @@ variable "availability_zone" {
 variable "availability_zone_relocation_enabled" {
   type        = bool
   default     = false
-  description = "If true, the cluster can be relocated to another availabity zone, either automatically by AWS or when requested"
+  description = "Whether or not the cluster can be relocated to another availability zone, either automatically by AWS or when requested. Available for use on clusters from the RA3 instance family."
 }
 
 variable "preferred_maintenance_window" {

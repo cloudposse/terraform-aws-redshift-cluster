@@ -48,7 +48,7 @@
 | <a name="input_elastic_ip"></a> [elastic\_ip](#input\_elastic\_ip) | The Elastic IP (EIP) address for the cluster | `string` | `null` | no |
 | <a name="input_enabled"></a> [enabled](#input\_enabled) | Set to false to prevent the module from creating any resources | `bool` | `null` | no |
 | <a name="input_encrypted"></a> [encrypted](#input\_encrypted) | Specifies whether the cluster is encrypted at rest | `bool` | `false` | no |
-| <a name="input_engine_version"></a> [engine\_version](#input\_engine\_version) | The version of the Amazon Redshift engine to use | `string` | `"1.0"` | no |
+| <a name="input_engine_version"></a> [engine\_version](#input\_engine\_version) | The version of the Amazon Redshift engine to use. See https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html | `string` | `"1.0"` | no |
 | <a name="input_enhanced_vpc_routing"></a> [enhanced\_vpc\_routing](#input\_enhanced\_vpc\_routing) | If true , enhanced VPC routing is enabled | `bool` | `false` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | ID element. Usually used for region e.g. 'uw2', 'us-west-2', OR role 'prod', 'staging', 'dev', 'UAT' | `string` | `null` | no |
 | <a name="input_final_snapshot_identifier"></a> [final\_snapshot\_identifier](#input\_final\_snapshot\_identifier) | The identifier of the final snapshot that is to be created immediately before deleting the cluster. If this parameter is provided, `skip_final_snapshot` must be `false` | `string` | `null` | no |

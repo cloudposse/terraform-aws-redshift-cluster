@@ -81,7 +81,7 @@ variable "port" {
 variable "engine_version" {
   type        = string
   default     = "1.0"
-  description = "The version of the Amazon Redshift engine to use"
+  description = "The version of the Amazon Redshift engine to use. See https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html"
 }
 
 variable "number_of_nodes" {

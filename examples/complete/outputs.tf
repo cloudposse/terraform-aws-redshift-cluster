@@ -74,7 +74,7 @@ output "redshift_subnet_group_arn" {
 }
 
 output "redshift_subnet_group_id" {
-  description = "The Redshift Subnet group name ID"
+  description = "The Redshift Subnet Group ID"
   value       = module.redshift_cluster.redshift_subnet_group_id
 }
 
@@ -84,7 +84,7 @@ output "redshift_parameter_group_arn" {
 }
 
 output "redshift_parameter_group_id" {
-  description = "The Redshift parameter group name"
+  description = "The Redshift parameter group ID"
   value       = module.redshift_cluster.redshift_parameter_group_id
 }
 

@@ -13,13 +13,13 @@ variable "database_name" {
 variable "admin_user" {
   type        = string
   default     = "admin"
-  description = "(Required unless a snapshot_identifier is provided) Username for the master DB user"
+  description = "Username for the master DB user. Required unless a snapshot_identifier is provided"
 }
 
 variable "admin_password" {
   type        = string
   default     = ""
-  description = "(Required unless a snapshot_identifier is provided) Password for the master DB user"
+  description = "Password for the master DB user. Required unless a snapshot_identifier is provided"
 }
 
 variable "node_type" {
@@ -39,7 +39,7 @@ variable "subnet_ids" {
   description = "List of VPC subnet IDs"
 }
 
-variable "vpc_security_groups" {
+variable "vpc_security_group_ids" {
   type        = list(string)
   default     = []
   description = "A list of Virtual Private Cloud (VPC) security groups to be associated with the cluster. Used for EC2-VPC platform"
@@ -81,10 +81,10 @@ variable "port" {
 variable "engine_version" {
   type        = string
   default     = "1.0"
-  description = "The version of the Amazon Redshift engine to use"
+  description = "The version of the Amazon Redshift engine to use. See https://docs.aws.amazon.com/redshift/latest/mgmt/cluster-versions.html"
 }
 
-variable "nodes" {
+variable "number_of_nodes" {
   type        = number
   default     = 1
   description = "The number of compute nodes in the cluster. This parameter is required when the ClusterType parameter is specified as multi-node"
@@ -92,7 +92,7 @@ variable "nodes" {
 
 variable "publicly_accessible" {
   type        = bool
-  default     = true
+  default     = false
   description = "If true, the cluster can be accessed from a public network"
 }
 
@@ -152,11 +152,11 @@ variable "owner_account" {
 
 variable "iam_roles" {
   type        = list(string)
-  description = "A list of IAM Role ARNs to associate with the cluster. A Maximum of 10 can be associated to the cluster at any time"
+  description = "A list of IAM Role ARNs to associate with the cluster. A maximum of 10 can be associated to the cluster at any time"
   default     = []
 }
 
-variable "logging" {
+variable "logging_enabled" {
   type        = bool
   default     = false
   description = "If true, enables logging information such as queries and connection attempts, for the specified Amazon Redshift cluster"
@@ -174,9 +174,14 @@ variable "logging_s3_key_prefix" {
   description = "The prefix applied to the log file names"
 }
 
-variable "default_security_group" {
+variable "allow_version_upgrade" {
   type        = bool
-  default     = true
-  description = "Specifies whether or not to create default security group for The Amazon Redshift cluster"
+  default     = false
+  description = "Whether or not to enable major version upgrades which are applied during the maintenance window to the Amazon Redshift engine that is running on the cluster"
 }
 
+variable "availability_zone_relocation_enabled" {
+  type        = bool
+  default     = false
+  description = "Whether or not the cluster can be relocated to another availability zone, either automatically by AWS or when requested. Available for use on clusters from the RA3 instance family"
+}

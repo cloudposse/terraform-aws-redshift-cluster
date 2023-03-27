@@ -13,12 +13,12 @@ resource "aws_redshift_cluster" "default" {
   cluster_type       = var.cluster_type
 
   vpc_security_group_ids               = var.vpc_security_group_ids
-  cluster_subnet_group_name            = join("", aws_redshift_subnet_group.default.*.id)
+  cluster_subnet_group_name            = join("", aws_redshift_subnet_group.default[*].id)
   availability_zone                    = var.availability_zone
   availability_zone_relocation_enabled = var.availability_zone_relocation_enabled
   preferred_maintenance_window         = var.preferred_maintenance_window
 
-  cluster_parameter_group_name        = join("", aws_redshift_parameter_group.default.*.id)
+  cluster_parameter_group_name        = join("", aws_redshift_parameter_group.default[*].id)
   automated_snapshot_retention_period = var.automated_snapshot_retention_period
   port                                = var.port
   cluster_version                     = var.engine_version

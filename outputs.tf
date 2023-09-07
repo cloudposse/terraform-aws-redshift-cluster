@@ -43,11 +43,6 @@ output "vpc_security_group_ids" {
   value       = local.enabled ? concat([], aws_redshift_cluster.default[*].vpc_security_group_ids) : null
 }
 
-output "cluster_security_groups" {
-  description = "The security groups associated with the cluster"
-  value       = local.enabled ? concat([], aws_redshift_cluster.default[*].cluster_security_groups) : null
-}
-
 output "endpoint" {
   description = "The connection endpoint"
   value       = local.enabled ? join("", aws_redshift_cluster.default[*].endpoint) : null

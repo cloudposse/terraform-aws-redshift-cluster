@@ -43,11 +43,6 @@ output "vpc_security_group_ids" {
   value       = module.redshift_cluster.vpc_security_group_ids
 }
 
-output "cluster_security_groups" {
-  description = "The security groups associated with the cluster"
-  value       = module.redshift_cluster.cluster_security_groups
-}
-
 output "endpoint" {
   description = "The connection endpoint"
   value       = module.redshift_cluster.endpoint

@@ -189,5 +189,5 @@ variable "availability_zone_relocation_enabled" {
 variable "maintenance_track_name" {
   type        = string
   default     = current
-  description = "Whether or not to enable major version upgrades which are applied during the maintenance window to the Amazon Redshift engine that is running on the cluster"
+  description = "The name of the maintenance track for the restored cluster."
 }

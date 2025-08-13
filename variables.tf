@@ -185,3 +185,9 @@ variable "availability_zone_relocation_enabled" {
   default     = false
   description = "Whether or not the cluster can be relocated to another availability zone, either automatically by AWS or when requested. Available for use on clusters from the RA3 instance family"
 }
+
+variable "maintenance_track_name" {
+  type        = string
+  default     = current
+  description = "Whether or not to enable major version upgrades which are applied during the maintenance window to the Amazon Redshift engine that is running on the cluster"
+}

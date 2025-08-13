@@ -47,6 +47,10 @@ resource "aws_redshift_cluster" "default" {
     aws_redshift_parameter_group.default
   ]
 
+  lifecycle {
+    ignore_changes = [maintenance_track_name]
+  }
+
   tags = module.this.tags
 }
 

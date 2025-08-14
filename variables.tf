@@ -188,6 +188,6 @@ variable "availability_zone_relocation_enabled" {
 
 variable "maintenance_track_name" {
   type        = string
-  default     = current
+  default     = "current"
   description = "The name of the maintenance track for the restored cluster."
 }

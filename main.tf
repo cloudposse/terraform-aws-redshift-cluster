@@ -34,14 +34,8 @@ resource "aws_redshift_cluster" "default" {
   snapshot_cluster_identifier         = var.snapshot_cluster_identifier
   owner_account                       = var.owner_account
   iam_roles                           = var.iam_roles
-  maintenance_track_name              = var.maintenance_track_name
-
-  depends_on = [
-    aws_redshift_subnet_group.default,
-    aws_redshift_parameter_group.default
-  ]
-    
   allow_version_upgrade               = var.allow_version_upgrade
+  maintenance_track_name              = var.maintenance_track_name
 
   logging {
     enable        = var.logging_enabled
@@ -49,14 +43,14 @@ resource "aws_redshift_cluster" "default" {
     s3_key_prefix = var.logging_s3_key_prefix
   }
 
-  lifecycle {
-    ignore_changes = [maintenance_track_name]
-  }
-
   depends_on = [
     aws_redshift_subnet_group.default,
     aws_redshift_parameter_group.default
   ]
+
+  lifecycle {
+    ignore_changes = [maintenance_track_name]
+  }
 
   tags = module.this.tags
 }

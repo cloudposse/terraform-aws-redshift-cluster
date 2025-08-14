@@ -43,11 +43,6 @@ output "vpc_security_group_ids" {
   value       = module.redshift_cluster.vpc_security_group_ids
 }
 
-output "cluster_security_groups" {
-  description = "The security groups associated with the cluster"
-  value       = module.redshift_cluster.cluster_security_groups
-}
-
 output "endpoint" {
   description = "The connection endpoint"
   value       = module.redshift_cluster.endpoint
@@ -74,7 +69,7 @@ output "redshift_subnet_group_arn" {
 }
 
 output "redshift_subnet_group_id" {
-  description = "The Redshift Subnet group name ID"
+  description = "The Redshift Subnet Group ID"
   value       = module.redshift_cluster.redshift_subnet_group_id
 }
 
@@ -84,7 +79,7 @@ output "redshift_parameter_group_arn" {
 }
 
 output "redshift_parameter_group_id" {
-  description = "The Redshift parameter group name"
+  description = "The Redshift parameter group ID"
   value       = module.redshift_cluster.redshift_parameter_group_id
 }
 

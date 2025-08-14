@@ -180,3 +180,8 @@ variable "default_security_group" {
   description = "Specifies whether or not to create default security group for The Amazon Redshift cluster"
 }
 
+variable "maintenance_track_name" {
+  type        = string
+  default     = "current"
+  description = "The name of the maintenance track for the restored cluster."
+}

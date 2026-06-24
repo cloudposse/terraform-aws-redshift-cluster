@@ -57,6 +57,17 @@ variable "preferred_maintenance_window" {
   description = "Weekly time range during which system maintenance can occur, in UTC. Format: ddd:hh24:mi-ddd:hh24:mi"
 }
 
+variable "maintenance_track_name" {
+  type        = string
+  default     = "current"
+  description = "The name of the maintenance track for the cluster. Valid values are `current` and `trailing`"
+
+  validation {
+    condition     = contains(["current", "trailing"], var.maintenance_track_name)
+    error_message = "The maintenance_track_name value must be either `current` or `trailing`."
+  }
+}
+
 variable "cluster_parameters" {
   type = list(object({
     name  = string

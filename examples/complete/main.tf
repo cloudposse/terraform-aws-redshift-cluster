@@ -66,5 +66,9 @@ module "redshift_cluster" {
   publicly_accessible   = var.publicly_accessible
   allow_version_upgrade = var.allow_version_upgrade
 
+  logging_enabled          = var.logging_enabled
+  logging_destination_type = var.logging_destination_type
+  logging_exports          = var.logging_exports
+
   context = module.this.context
 }

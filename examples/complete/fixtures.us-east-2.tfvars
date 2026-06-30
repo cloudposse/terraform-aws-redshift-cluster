@@ -25,3 +25,9 @@ engine_version = "1.0"
 publicly_accessible = false
 
 allow_version_upgrade = false
+
+logging_enabled = true
+
+logging_destination_type = "cloudwatch"
+
+logging_exports = ["connectionlog", "userlog"]

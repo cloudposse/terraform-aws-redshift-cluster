@@ -1,5 +1,6 @@
 locals {
-  enabled = module.this.enabled
+  enabled         = module.this.enabled
+  logging_enabled = module.this.enabled && var.logging_enabled
 }
 
 resource "aws_redshift_cluster" "default" {
@@ -36,18 +37,22 @@ resource "aws_redshift_cluster" "default" {
   iam_roles                           = var.iam_roles
   allow_version_upgrade               = var.allow_version_upgrade
 
-  logging {
-    enable        = var.logging_enabled
-    bucket_name   = var.logging_bucket_name
-    s3_key_prefix = var.logging_s3_key_prefix
-  }
-
   depends_on = [
     aws_redshift_subnet_group.default,
     aws_redshift_parameter_group.default
   ]
 
   tags = module.this.tags
+}
+
+resource "aws_redshift_logging" "this" {
+  count = local.logging_enabled ? 1 : 0
+
+  cluster_identifier   = one(aws_redshift_cluster.default[*].id)
+  log_destination_type = var.logging_destination_type
+  log_exports          = var.logging_exports
+  bucket_name          = var.logging_bucket_name
+  s3_key_prefix        = var.logging_s3_key_prefix
 }
 
 resource "aws_redshift_subnet_group" "default" {

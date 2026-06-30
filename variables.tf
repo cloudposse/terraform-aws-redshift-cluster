@@ -162,6 +162,23 @@ variable "logging_enabled" {
   description = "If true, enables logging information such as queries and connection attempts, for the specified Amazon Redshift cluster"
 }
 
+variable "logging_destination_type" {
+  type        = string
+  default     = "s3"
+  description = "Log destination type. Valid values are `s3` and `cloudwatch`."
+
+  validation {
+    condition     = contains(["s3", "cloudwatch"], var.logging_destination_type)
+    error_message = "Invalid logging destination type. Valid values are `s3` and `cloudwatch`."
+  }
+}
+
+variable "logging_exports" {
+  type        = list(string)
+  default     = []
+  description = "A list of log types to be enabled. Valid values are `userlog`, `connectionlog`, and `useractivitylog`."
+}
+
 variable "logging_bucket_name" {
   type        = string
   default     = null

@@ -16,7 +16,7 @@ admin_password = "Admin_Password_1"
 
 database_name = "test"
 
-node_type = "dc2.large"
+node_type = "ra3.large"
 
 cluster_type = "single-node"
 

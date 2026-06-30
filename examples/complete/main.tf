@@ -13,7 +13,7 @@ module "vpc" {
 
 module "subnet" {
   source  = "cloudposse/dynamic-subnets/aws"
-  version = "2.0.2"
+  version = "2.4.2"
 
   availability_zones   = var.availability_zones
   vpc_id               = module.vpc.vpc_id
@@ -65,6 +65,10 @@ module "redshift_cluster" {
   engine_version        = var.engine_version
   publicly_accessible   = var.publicly_accessible
   allow_version_upgrade = var.allow_version_upgrade
+
+  logging_enabled          = var.logging_enabled
+  logging_destination_type = var.logging_destination_type
+  logging_exports          = var.logging_exports
 
   context = module.this.context
 }

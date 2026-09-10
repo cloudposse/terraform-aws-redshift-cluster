@@ -70,7 +70,7 @@ resource "aws_redshift_parameter_group" "default" {
   count = local.enabled ? 1 : 0
 
   name   = module.this.id
-  family = "redshift-1.0"
+  family = var.cluster_parameter_group_family
 
   dynamic "parameter" {
     for_each = var.cluster_parameters

@@ -213,3 +213,9 @@ variable "availability_zone_relocation_enabled" {
   default     = false
   description = "Whether or not the cluster can be relocated to another availability zone, either automatically by AWS or when requested. Available for use on clusters from the RA3 instance family"
 }
+
+variable "cluster_parameter_group_family" {
+  type        = string
+  default     = "redshift-1.0"
+  description = "Family of the cluster parameter group. RA3 and RG node types require `redshift-2.0`; DC2 and older use `redshift-1.0`"
+}

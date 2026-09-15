@@ -219,3 +219,9 @@ variable "cluster_parameter_group_family" {
   default     = "redshift-1.0"
   description = "Family of the cluster parameter group. RA3 and RG node types require `redshift-2.0`; DC2 and older use `redshift-1.0`"
 }
+
+variable "manual_snapshot_retention_period" {
+  type        = number
+  default     = -1
+  description = "The default number of days to retain a manual snapshot. If the value is -1, the snapshot is retained indefinitely. Valid values are -1 and integers between 1 and 3653"
+}

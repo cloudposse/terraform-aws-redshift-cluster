@@ -22,6 +22,7 @@ resource "aws_redshift_cluster" "default" {
 
   cluster_parameter_group_name        = join("", aws_redshift_parameter_group.default[*].id)
   automated_snapshot_retention_period = var.automated_snapshot_retention_period
+  manual_snapshot_retention_period    = var.manual_snapshot_retention_period
   port                                = var.port
   cluster_version                     = var.engine_version
   number_of_nodes                     = var.number_of_nodes
